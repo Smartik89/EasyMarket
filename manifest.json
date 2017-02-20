@@ -1,0 +1,52 @@
+{
+
+	"manifest_version": 2,
+	"name"            : "EasyMarket",
+	"version"         : "1.0",
+
+	"description"     : "Modify Envato Market",
+	"icons"           : {
+		"256": "img/256.png",
+		"128": "img/128.png",
+		"64" : "img/64.png",
+		"48" : "img/48.png",
+		"32" : "img/32.png",
+		"24" : "img/24.png",
+		"16" : "img/16.png"
+	},
+
+	"browser_action": {
+		"name": "EasyMarket"
+	},
+
+	"content_scripts": [{
+		"js"     : [ 
+			"js/jquery-3.1.1.min.js", 
+			"trumbowyg/trumbowyg.min.js",
+			"js/config.js" 
+		],
+		"css"    : [ 
+			"trumbowyg/ui/trumbowyg.css" 
+		],
+		"matches": [ 
+			"*://*.themeforest.net/*", 
+			"*://*.codecanyon.net/*", 
+			"*://*.videohive.net/*", 
+			"*://*.audiojungle.net/*", 
+			"*://*.graphicriver.net/*", 
+			"*://*.photodune.net/*", 
+			"*://*.3docean.net/*", 
+			"*://*.activeden.net/*"
+		],
+		"run_at" : "document_start"
+	}],
+
+	"web_accessible_resources": [
+		"trumbowyg/ui/icons.svg"
+	],
+
+	"update_url": "http://clients2.google.com/service/update2/crx"
+
+}
+
+// Icons made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
