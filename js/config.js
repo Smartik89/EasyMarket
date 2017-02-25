@@ -69,15 +69,27 @@
 							]
 						}
 					};
+					// On comments page.
+					$('#comment_form_content, .js-comment-new-reply-field').trumbowyg( opt );
 
-					$('textarea#description').trumbowyg( $.extend( opt , { autogrow: false } ) );
-
-					$('#deletion_reason, #tags_default, #reviewer_message, #comment_form_content').trumbowyg( opt );
-
+					// Other textareas, show editor on click.
 					$('body').on( 'click', 'textarea', function(){
 						$(this).trumbowyg( opt );
 					});
 
+					// On submittion page.
+					var descr_opt = opt;
+					$('textarea#description').trumbowyg( $.extend( descr_opt , { autogrow: false } ) );
+					$('#deletion_reason, #tags_default, #reviewer_message').trumbowyg( opt );
+
+					$('textarea').on( 'change', function(){
+						if ($.trim($('#textarea').val()).length < 1){
+							var tbw =  $(this).parents('.trumbowyg-box');
+							tbw.find('.trumbowyg-editor');
+
+							tbw.trumbowyg('html', '');
+						}
+					});
 				},
 
 				multiselect: function(){

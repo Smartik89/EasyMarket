@@ -594,6 +594,17 @@ body.trumbowyg-body-fullscreen {
 More
 -------------------------------------------------------------------------------
 */
+.trumbowyg-box{
+  margin-top: 0;
+}
+
+.comment__new-reply .trumbowyg-box, 
+.comment__new-reply .trumbowyg-editor,
+.js-comment-new-reply .trumbowyg-box, 
+.js-comment-new-reply .trumbowyg-editor{
+  min-height: 60px;
+}
+
 textarea#description{
   min-height: 700px
 }
@@ -606,12 +617,11 @@ textarea#description{
 .trumbowyg button, 
 .trumbowyg [role=button], 
 .trumbowyg [type=submit] {
-    border-radius: 0;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 5px 20px;
+  text-decoration: none;
 }
